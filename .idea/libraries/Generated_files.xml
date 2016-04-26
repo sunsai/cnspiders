@@ -2,19 +2,11 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/index.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/dumpingHandler.js" />
-        <item url="file://$PROJECT_DIR$/routes/users.js" />
-        <item url="file://$PROJECT_DIR$/gulpfile.js" />
         <item url="file://$PROJECT_DIR$/spiders/sContent.js" />
-        <item url="file://$PROJECT_DIR$/config/mongoose.js" />
-        <item url="file://$PROJECT_DIR$/models/users.js" />
-        <item url="file://$PROJECT_DIR$/models/topic.js" />
         <item url="file://$PROJECT_DIR$/routes/index.js" />
-        <item url="file://$PROJECT_DIR$/mongoose.js" />
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/channelManager.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/jsonBodyParser.js" />
         <item url="file://$PROJECT_DIR$/spiders/cnspiders.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/jsonBodyParser.js" />
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/service/WeinreClientCommands.js" />
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/MessageQueue.js" />
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/Channel.js" />
@@ -26,14 +18,24 @@
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/HttpChannelHandler.js" />
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/extensionManager.js" />
         <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/messageHandler.js" />
+        <item url="file://$PROJECT_DIR$/index.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/dumpingHandler.js" />
+        <item url="file://$PROJECT_DIR$/routes/users.js" />
+        <item url="file://$PROJECT_DIR$/gulpfile.js" />
+        <item url="file://$PROJECT_DIR$/config/mongoose.js" />
+        <item url="file://$PROJECT_DIR$/models/users.js" />
+        <item url="file://$PROJECT_DIR$/models/topics.js" />
+        <item url="file://$PROJECT_DIR$/mongoose.js" />
+        <item url="file://$PROJECT_DIR$/mongoose.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/index.js" />
       <root url="file://$PROJECT_DIR$/spiders/sContent.js" />
       <root url="file://$PROJECT_DIR$/routes/index.js" />
       <root url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/channelManager.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/jsonBodyParser.js" />
       <root url="file://$PROJECT_DIR$/spiders/cnspiders.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/jsonBodyParser.js" />
       <root url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/service/WeinreClientCommands.js" />
       <root url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/MessageQueue.js" />
       <root url="file://$PROJECT_DIR$/node_modules/weinre/lib-src/Channel.js" />
@@ -52,6 +54,7 @@
       <root url="file://$PROJECT_DIR$/config/mongoose.js" />
       <root url="file://$PROJECT_DIR$/models/users.js" />
       <root url="file://$PROJECT_DIR$/models/topics.js" />
+      <root url="file://$PROJECT_DIR$/mongoose.js" />
       <root url="file://$PROJECT_DIR$/mongoose.js" />
     </CLASSES>
     <SOURCES />
