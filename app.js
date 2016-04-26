@@ -7,8 +7,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+// 引入 mongoose 配置文件
+var mongoose = require('./config/mongoose');
+// 执行配置文件中的函数，以实现数据库的配置和 Model 的创建等
+var db = mongoose();
 
+var routes = require('./routes/index');
+var users = require('./routes/users');
 var app = express();
 
 var env = process.env.NODE_ENV || 'development';
@@ -30,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/users', users);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

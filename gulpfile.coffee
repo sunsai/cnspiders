@@ -27,9 +27,9 @@ gulp.task('build',(callback)->
 )
 gulp.task('develop', (callback)->
   nodemon({
-    script: 'bin/www',
-    ext: 'js ejs coffee scss html',
-    task:['build']
+    script: 'bin/www'
+    ext: 'js ejs coffee html'
+    tasks: ['build']
   })
   callback()
 )
@@ -37,10 +37,11 @@ gulp.task('server',()->
   browsersync({
     proxy: 'http://localhost:3000'
     port: 8800
+    notify: true
   })
 )
 gulp.task('watch', ()->
-  gulp.watch(['./routes/**/*.*','./spiders/**/*.*','./views/**/*.*'], ['reload'])
+  gulp.watch(['./routes/**/*.*','./spiders/**/*.*','./views/**/*.*','./public/**/*.*'], ['reload'])
 )
 gulp.task('reload',(callback)->
   run(['bsreload'],callback)

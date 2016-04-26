@@ -44,8 +44,8 @@
   gulp.task('develop', function(callback) {
     nodemon({
       script: 'bin/www',
-      ext: 'js ejs coffee scss html',
-      task: ['build']
+      ext: 'js ejs coffee html',
+      tasks: ['build']
     });
     return callback();
   });
@@ -53,12 +53,13 @@
   gulp.task('server', function() {
     return browsersync({
       proxy: 'http://localhost:3000',
-      port: 8800
+      port: 8800,
+      notify: true
     });
   });
 
   gulp.task('watch', function() {
-    return gulp.watch(['./routes/**/*.*', './spiders/**/*.*', './views/**/*.*'], ['reload']);
+    return gulp.watch(['./routes/**/*.*', './spiders/**/*.*', './views/**/*.*', './public/**/*.*'], ['reload']);
   });
 
   gulp.task('reload', function(callback) {
