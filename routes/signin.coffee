@@ -32,11 +32,15 @@ router.post('/', (req, res)->
   if tPass is ''
     ep.emit('errinfo', '密码不能为空！')
     return
-
   User.findOneByname(tUser, (err, user)->
     if err
       ep.emit('errinfo', '获取信息失败')
       return
+    if user is null
+      ep.emit('errinfo', '用户或密码错误！')
+      return
+    console.log('---------------------user---------------------');
+    console.log(user);
     req.session.user = user;
     res.render('signin', {
       title: 'sai'

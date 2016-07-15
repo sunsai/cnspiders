@@ -15,6 +15,11 @@
                         <div class="alert alert-success">
                             <%= success %>
                         </div>
+                        <script>
+                            setTimeout(function () {
+                                location.href = '/index';
+                            }, 2000)
+                        </script>
                         <% } %>
                         <% if(errinfo){ %>
                         <div class="alert alert-danger">

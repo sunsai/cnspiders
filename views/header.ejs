@@ -41,6 +41,7 @@
                 <li><a href="/api">API</a></li>
                 <li><a href="/about">关于</a></li>
                 <% if(user){ %>
+                <li><a href="#"><%= user.name %></a></li>
                 <li><a href="/signout">注销</a></li>
                 <% }else { %>
                 <li><a href="/signup">注册</a></li>
