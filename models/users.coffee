@@ -4,11 +4,10 @@ UserSchema = new mongoose.Schema(
   name: {
     type: String
     exist: true
-    trim: true
   }
   href: String
   img: String
 )
-UserSchema.methods.findByname = (callback)->
-  return this.model('users').find({name: this.name}, callback)
+UserSchema.statics.findOneByname = (name, callback)->
+  return this.findOne({name: name}, callback)
 mongoose.model('users', UserSchema)

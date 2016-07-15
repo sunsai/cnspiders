@@ -1,46 +1,59 @@
 <% include header %>
 <div id="container" class="container">
-  <div class="row">
-    <div class="col-md-9 col-sm-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <ol class="breadcrumb">
-            <li><a href="#">主页</a></li>
-            <li class="active">登录</li>
-          </ol>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-7">
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label for="tUser" class="col-sm-3 control-label">用户名:</label>
-                    <div class="col-sm-9">
-                      <input class="form-control" type="text" name="tUser" id="tUser" placeholder="用户名">
+    <div class="row">
+        <div class="col-md-9 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <ol class="breadcrumb">
+                        <li><a href="#">主页</a></li>
+                        <li class="active">登录</li>
+                    </ol>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <% if(success){ %>
+                        <div class="alert alert-success">
+                            <%= success %>
+                        </div>
+                        <% } %>
+                        <% if(errinfo){ %>
+                        <div class="alert alert-danger">
+                            <%= errinfo %>
+                        </div>
+                        <% } %>
+                        <div class="col-md-7">
+                            <form class="form-horizontal" method="post" action="/signin">
+
+                                <div class="form-group">
+                                    <label for="tUser" class="col-sm-3 control-label">用户名:</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" name="tUser" id="tUser"
+                                               placeholder="用户名">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tPass" class="col-sm-3 control-label">密 码：</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" name="tPass" id="tPass"
+                                               placeholder="密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <button type="submit" class="btn btn-primary">登 录</button>
+                                        <a href="#">忘记了密码？</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-5"></div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="tPass" class="col-sm-3 control-label">密 码：</label>
-                    <div class="col-sm-9">
-                      <input class="form-control" type="text" name="tPass" id="tPass" placeholder="密码">
-                  </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-3 col-sm-9">
-                    <button type="submit" class="btn btn-primary">登 录</button>
-                    <a href="#">忘记了密码？</a>
-                  </div>
-                </div>
-              </form>
             </div>
-            <div class="col-md-5"></div>
-          </div>
         </div>
-      </div>
+        <div class="col-md-3 col-sm-12">
+            <% include siderabout %>
+        </div>
     </div>
-    <div class="col-md-3 col-sm-12">
-      <%include siderabout%>
-    </div>
-  </div>
 </div>
-<%include footer%>
+<% include footer %>

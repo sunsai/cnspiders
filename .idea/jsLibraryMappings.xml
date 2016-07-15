@@ -2,5 +2,8 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{cnspiders node_modules}" />
+    <file url="PROJECT" libraries="{Generated files, async-DefinitelyTyped, bootstrap-DefinitelyTyped, cnspiders node_modules, express-DefinitelyTyped, fs-extra-DefinitelyTyped, lodash-DefinitelyTyped, mongoose-DefinitelyTyped, path-case-DefinitelyTyped, typescript-DefinitelyTyped}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
+    <includedPredefinedLibrary name="WebGL" />
   </component>
 </project>

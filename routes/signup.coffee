@@ -9,8 +9,6 @@ router.get('/', (req, res)->
 router.post('/signup', (req, res)->
   console.log(req.body.tUser)
   console.log(req.body.temail)
-#  res.render('signup', {
-#    title: 'sai'
-#  })
+  res.send(req.body)
 )
 module.exports = router
