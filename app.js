@@ -1,5 +1,3 @@
-
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -11,9 +9,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('./config/mongoose');
 // 执行配置文件中的函数，以实现数据库的配置和 Model 的创建等
 var db = mongoose();
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var config = require('./config/config');
 var app = express();
 
 var env = process.env.NODE_ENV || 'development';
@@ -34,14 +30,22 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+var glob = require('glob');
+files = glob.sync(config.routes.path + '*.js', {nodir: true});
+files.forEach(function (file) {
+  var route = require(file);
+  var filename = path.parse(file).name;
+  app.use('/' + filename, route);
+});
+
+var index =require(config.routes.path+config.routes.index);
+app.use('/',index);
 
 /// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+app.use(function (req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 /// error handlers
@@ -50,25 +54,25 @@ app.use(function(req, res, next) {
 // will print stacktrace
 
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err,
-            title: 'error'
-        });
+  app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err,
+      title: 'error'
     });
+  });
 }
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {},
-        title: 'error'
-    });
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {},
+    title: 'error'
+  });
 });
 
 

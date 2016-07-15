@@ -1,6 +1,61 @@
 <% include header %>
+<div id="container-index" class="container">
+  <div class="row">
+    <div class="col-md-9 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <ul class="nav nav-pills">
+            <li class="active"><a href="<%= tags[0].href %>"><%= tags[0].name %></a></li>
+            <% for(var i = 1;i < tags.length;i++){ %>
+            <li><a href="<%= tags[i].href %>"><%= tags[i].name %></a></li>
+            <% } %>
+          </ul>
+        </div>
+        <!--user: "alsotang",-->
+        <!--userImg: "https://avatars.githubusercontent.com/u/1147375?v=3&s=120",-->
+        <!--userUrl: "http://cnodejs.org//user/alsotang",-->
+        <!--count_of_replies: "140",-->
+        <!--count_seperator: "/",-->
+        <!--count_of_visits: "12258",-->
+        <!--last_time: "1 天前",-->
+        <!--last_time_href: "http://cnodejs.org//topic/572afb6b15c24e592c16e1e6#574d68922b2f7ea232362a76",-->
+        <!--last_time_img: "https://avatars.githubusercontent.com/u/5032079?v=3&s=120",-->
+        <!--put_top: "置顶",-->
+        <!--topic_title: "新的社区推荐客户端：Noder",-->
+        <!--topic_href: "http://cnodejs.org//topic/572afb6b15c24e592c16e1e6"-->
 
-  <h1><%-title %></h1>
-  <p>Welcome to <%-title %></p>
+        <div id="list-container" class="panel-body">
+          <ul class="list-group">
+            <% topics.forEach(function (topic) { %>
+            <li class="list-group-item">
+              <a href="<%= topic.userUrl %>" title="<%= topic.user %>">
+                <img src="<%= topic.userImg %>" alt="">
+              </a>
+              <span class="count_of_replies"><%= topic.count_of_replies %></span>
+              <span><%= topic.count_seperator %></span>
+              <span class="count_of_visits"><%= topic.count_of_visits %></span>
+              <span class="<%= topic.put_top.class %>"><%= topic.put_top.data %></span>
+              <a href="<%= topic.last_time_href %>" title="<%= topic.topic_title %>">
+                <%= topic.topic_title %>
+              </a>
+              <a class="pull-right" href="<%= topic.last_time_href %>">
+                <% if(topic.last_time_img != ''){ %>
+                <img src="<%= topic.last_time_img %>">
+                <% } %>
+                <span><%= topic.last_time %></span>
+              </a>
+            </li>
+            <% }) %>
 
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <% include siderabout %>
+      <% include links %>
+    </div>
+
+  </div>
+</div>
 <% include footer %>
